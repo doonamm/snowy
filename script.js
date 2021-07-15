@@ -3,26 +3,26 @@ setInterval(createSnowFlake, Math.floor(Math.random()*100) + 70)
 var isPhone = false;
 if(parseInt(font_size) > 30){
     isPhone = true;
-    console.log("okokokokok");
 }
 var isFullScreen = false;
 
 document.addEventListener('dblclick', ()=>{
-    
-    document.body.innerHTML = '';
-
     if(!isFullScreen){
         document.documentElement.requestFullscreen();
-        if(isPhone)        
+        if(isPhone){
             font_size = '15px';
+        }        
     }
     else{
         document.exitFullscreen();
         if(isPhone)
             font_size = '35px';
     }
- 
-
+    if(isPhone){
+        const snow = document.querySelectorAll('.fa-snowflake');
+        for(let i = 0; i<snow.length; i++)
+            snow[i].style.fontSize = font_size;
+    }    
     isFullScreen = !isFullScreen;
 })
 
@@ -38,7 +38,6 @@ function createSnowFlake(){
     snow_flake.style.opacity = Math.random();
     snow_flake.style.fontSize = Math.round(Math.random()*10) - 5 + parseInt(font_size) + 'px';
 
-    console.log(font_size);
     document.body.appendChild(snow_flake);
     setTimeout(()=>{
         snow_flake.remove();
