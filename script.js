@@ -11,18 +11,17 @@ document.addEventListener('dblclick', ()=>{
         document.documentElement.requestFullscreen();
         if(isPhone){
             font_size = '15px';
+            const snow = document.querySelectorAll('.fa-snowflake');
+            for(let i = 0; i<snow.length; i++)
+                snow[i].style.fontSize = font_size;
         }        
     }
     else{
+        document.body.innerText = '';
         document.exitFullscreen();
         if(isPhone)
             font_size = '35px';
     }
-    if(isPhone){
-        const snow = document.querySelectorAll('.fa-snowflake');
-        for(let i = 0; i<snow.length; i++)
-            snow[i].style.fontSize = font_size;
-    }    
     isFullScreen = !isFullScreen;
 })
 
