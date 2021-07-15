@@ -34,9 +34,7 @@ body{
     .fa-snowflake{
         font-size: 35px;
     }
-}
-@media only screen and (max-device-width: 415px) and (display-mode: fullscreen){
-    .fa-snowflake{
+    .fa-snowflake.fullscreen{
         font-size: 15px;
     }
 }
