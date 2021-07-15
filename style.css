@@ -10,6 +10,9 @@ body{
     height: 100vh;
     width: 100vw;
     position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 1em;
 }
 
 .fa-snowflake{
@@ -30,5 +33,10 @@ body{
 @media only screen and (max-device-width: 415px){
     .fa-snowflake{
         font-size: 35px;
+    }
+}
+@media only screen and (max-device-width: 415px) and (display-mode: fullscreen){
+    .fa-snowflake{
+        font-size: 15px;
     }
 }

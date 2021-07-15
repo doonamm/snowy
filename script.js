@@ -1,11 +1,11 @@
-const font_size = window.getComputedStyle(document.querySelector('.fa-snowflake')).getPropertyValue('font-size');
 setInterval(createSnowFlake, Math.floor(Math.random()*100) + 70)
 
 var isFullScreen = false;
 
 document.addEventListener('dblclick', ()=>{
-    if(!isFullScreen)
+    if(!isFullScreen){
         document.documentElement.requestFullscreen();
+    }
     else
         document.exitFullscreen();
     isFullScreen = !isFullScreen;
@@ -13,6 +13,7 @@ document.addEventListener('dblclick', ()=>{
 
 function createSnowFlake(){
     const snow_flake = document.createElement('i');
+    const font_size = window.getComputedStyle(document.querySelector('.fa-snowflake')).getPropertyValue('font-size');
 
     snow_flake.classList.add('fas', 'fa-snowflake');
 
@@ -24,7 +25,7 @@ function createSnowFlake(){
     snow_flake.style.fontSize = Math.round(Math.random()*10) - 5 + parseInt(font_size) + 'px';
 
     document.body.appendChild(snow_flake);
-
+    console.log(document.body.offsetWidth);
     setTimeout(()=>{
         snow_flake.remove();
     }, randomTime*1000);
