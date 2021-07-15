@@ -32,7 +32,7 @@ body{
 
 @media only screen and (max-device-width: 415px){
     .fa-snowflake{
-        font-size: 35px;
+        font-size: 40px;
     }
     .fa-snowflake.fullscreen{
         font-size: 15px;
