@@ -17,10 +17,11 @@ document.addEventListener('dblclick', ()=>{
         }        
     }
     else{
-        document.body.innerText = '';
         document.exitFullscreen();
-        if(isPhone)
+        if(isPhone){
+            document.body.innerText = '';
             font_size = '35px';
+        }
     }
     isFullScreen = !isFullScreen;
 })
